@@ -3,11 +3,12 @@ stages:
   jobs:
   - job: CI
     steps:
-    - script: npm install
-      displayName: Install nodejs dependencies
+    - script: mvn clean package && cp target/${COMPONENT-1.0.jar ${COMPONENT}.jar
+      displayName: Install maven dependencies
     - script: docker build -t ${COMPONENT} .
       displayName: Build docker image
 
+#here the mvn clean command first clean the files and directories creted after a build, package will copile and package the code in .jar/.war file based on pom file and stores this .jar/.war file in a target diretcory by default.
 
 - stage: DockerImageUpload
   condition: succeeded()
