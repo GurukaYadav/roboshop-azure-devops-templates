@@ -19,4 +19,4 @@ stages:
         aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 124374336606.dkr.ecr.us-east-1.amazonaws.com
         docker tag ${COMPONENT}:latest 124374336606.dkr.ecr.us-east-1.amazonaws.com/${COMPONENT}:latest
         docker push 124374336606.dkr.ecr.us-east-1.amazonaws.com/${COMPONENT}:latest
-        displayName: Docker push image to ECR
+      displayName: Docker push image to ECR
