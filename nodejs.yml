@@ -3,9 +3,9 @@ stages:
   jobs:
   - job: CI
     steps:
-    - script: "npm install"
+    - script: npm install
       displayName: Install nodejs dependencies
-    - script: "docker build -t ${COMPONENT} ."
+    - script: docker build -t ${COMPONENT} .
       displayName: Build docker image
 
 
