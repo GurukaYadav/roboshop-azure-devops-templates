@@ -5,7 +5,7 @@ stages:
     steps:
     - script: |
         go mod init dispatch
-        go get
+        go install
         go build
       displayName: Install golang dependencies
     - script: docker build -t ${COMPONENT} .
