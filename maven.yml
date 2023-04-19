@@ -3,6 +3,8 @@ stages:
   jobs:
   - job: CI
     steps:
+    - script: env
+      displayName: ENV variables
     - script: mvn clean package && cp target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
       displayName: Install maven dependencies
     - script: docker build -t ${COMPONENT} .
